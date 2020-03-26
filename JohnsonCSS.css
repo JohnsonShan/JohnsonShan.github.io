@@ -80,7 +80,7 @@
             @media only screen and (max-width: 768px) {
                 .background-text {
                     position: absolute;
-                    top: 50%;
+                    top: 60%;
                     left: 50%;
                     width: 90%;
                     text-align: center;
