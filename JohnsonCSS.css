@@ -91,5 +91,9 @@
                 }
                 .show-if-mobile {
                     display: flex;
+
+                }
+                .add-bottom-margin-if-mobile{
+                    margin-bottom: 10vh;
                 }
             }
