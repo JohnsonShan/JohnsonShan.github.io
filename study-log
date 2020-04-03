@@ -1,0 +1,15 @@
+css 圖片完美置中
+            .image-container {
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .image {
+                margin: auto;
+                height: auto;
+                object-fit: cover;
+            }
+重點: display: flex;
+

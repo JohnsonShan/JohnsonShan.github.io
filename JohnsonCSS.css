@@ -63,7 +63,6 @@
             
             .image {
                 margin: auto;
-                /* Magic! */
                 width: 80%;
                 max-height: 60vh;
                 height: auto;
