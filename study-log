@@ -1,12 +1,12 @@
 css 圖片完美置中
-            .image-container {
+            .flex-container {
                 margin: auto;
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
             
-            .image {
+            .flex-content {
                 margin: auto;
                 height: auto;
                 object-fit: cover;
