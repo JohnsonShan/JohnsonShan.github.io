@@ -13,6 +13,52 @@ css 圖片完美置中
             }
 重點: display: flex;
 
-document.querySelector('audio[data-key=${e.keyCode}]')
+day1: 
+使用document.querySelector
+使用classList.add 及 classList.remove 配合transition
+
 document.querySelector(`audio[data-key=${e.keyCode}]`)
-const audio = document.querySelector(`audio[data-key="${e.keyCode}]"`)
+key.classList.add("playing");
+this.classList.remove("playing");
+
+
+day2:
+使用.style 改變 style 屬性,
+使用setInterval 定時執行function 
+
+document.querySelector(".second-hand").style.transform = `rotate(${seconds_deg}deg)`;
+setInterval(setDate, 1000);
+
+day3:
+初次使用CSS Variables
+
+         :root {
+            --spacing: 10px;
+            --blur: 10px;
+            --base: #ffc600;
+        }
+        
+        img {
+            padding: var(--spacing);
+            background: var(--base);
+            filter: blur( var(--blur));
+        }
+
+const suffix = this.dataset.sizing || '';
+document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+
+day4:
+使用Array function
+
+const totalYears = inventors.reduce((total, inventor) => total + inventor.passed - inventor.year, 0);
+
+const sum = data.reduce((obj, item) => {
+    if (!obj[item]) {
+        obj[item] = 0;
+    }
+    obj[item]++;
+    return obj;
+}, {});
+
+google 發現第一種寫法會return 第一句,而第二種寫法需添加return
+goolge 了javascript object 寫法及ES5 與ES6 的差別
