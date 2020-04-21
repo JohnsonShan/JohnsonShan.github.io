@@ -62,3 +62,14 @@ const sum = data.reduce((obj, item) => {
 
 google 發現第一種寫法會return 第一句,而第二種寫法需添加return
 goolge 了javascript object 寫法及ES5 與ES6 的差別
+
+day5: 
+練習css flex 
+flex: 1;
+justify-content: center;
+align-items: center;
+display: flex;
+flex-direction: column;
+
+items.forEach(item => item.addEventListener('transitionend', toggleOpenActive));
+有機會有數種transitionend 同時發生，導致toggle 失效
