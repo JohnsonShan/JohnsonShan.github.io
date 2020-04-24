@@ -73,3 +73,63 @@ flex-direction: column;
 
 items.forEach(item => item.addEventListener('transitionend', toggleOpenActive));
 有機會有數種transitionend 同時發生，導致toggle 失效
+
+day6:
+使用web api 
+fetch(endpoint)
+    .then(blob => blob.json())
+    .then(data => cities.push(...data))
+重溫array method
+Regular Expression
+function numWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+day7:
+Array method 2
+console.log(people.some(person => (2020 - person.year) >= 19));
+console.log(people.every(person => (2020 - person.year) >= 19));
+console.log(comments.find(comment => (comment.id === 823423)).text);
+const index = comments.findIndex(comment => (comment.id === 823423));
+comments.splice(index, 1)
+
+day8:
+html canvas
+
+            ctx.beginPath();
+            //start
+            ctx.moveTo(lastX, lastY);
+            //to
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+
+offset x,y 是scr element 相應x,y
+
+day9:
+console 應用
+
+console.assert(false, 'this is wrong');
+只有condition = false 才會print 後面的string
+
+計時
+        console.time('fetching data');
+        fetch('https://api.github.com/users/wesbos')
+            .then(data => data.json())
+            .then(data => {
+
+                console.timeEnd('fetching data');
+                console.log(data);
+            });
+
+day10:
+checkbox應用
+注意query selector syntax
+const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+檢查undefined
+condition:  true || false && false = true
+            (true || false) && false = false
+
+                    if ((checkbox === this || checkbox === lastCheckedbox) && lastCheckedbox !== undefined) {
+                        inbetween = !inbetween;
+
+                    }
