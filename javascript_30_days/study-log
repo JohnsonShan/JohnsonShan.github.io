@@ -138,3 +138,47 @@ day12:
 處理array
 array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
 keyArray.splice(-secretCode.length - 1, keyArray.length - secretCode.length);
+
+day13:
+scroll slide in/out
+利用window.scrollY 和 image.offsetY 判斷 slide in/ out
+const slideInAt = (window.scrollY + window.innerHeight);
+if (isHalfShown && isNotScrolledPast) {
+    slideImage.classList.add('active');
+}
+
+day14:
+Shallow copy, deep copy
+類似pointer的概念
+以下方法new object/array 會指向original object/array 的 memory address, 修改新的會同時影響原來的
+const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+const team = players;
+
+解決方法: deep copy
+const team2 = players.slice();
+const team3 = [].concat(players);
+const team4 = [...players];
+const team5 = Array.from(players);
+然而以上方法只能做一層deep copy, 如果object 裡有object/ array 方法會失效
+可以將obj換成json再換回來, 只限json obj, method/function 會失效
+var obj2 = JSON.parse(JSON.stringify(obj1));
+或使用jquery $.extend or lodash library 
+
+day15:
+localstorage
+const items = JSON.parse(localStorage.getItem('items')) || [];
+localStorage.setItem('items', JSON.stringify(items));
+以JSON 格式儲存,以JSON 格式讀取
+
+day16:
+<h1 contenteditable>🔥WOAH!</h1>
+contenteditable 表示可否被用戶編輯
+text-shadow: 50px 50px 0 rgba(0, 0, 0, 0.7);
+text-shadow: h-shadow v-shadow blur-radius color|none|initial|inherit;
+不同的varible定義寫法
+// const width = hero.offsetWidth;
+// const height = hero.offsetHeight;
+const {
+    offsetWidth: width,
+    offsetHeight: height
+} = hero;
