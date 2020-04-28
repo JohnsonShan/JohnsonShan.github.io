@@ -171,6 +171,7 @@ localStorage.setItem('items', JSON.stringify(items));
 以JSON 格式儲存,以JSON 格式讀取
 
 day16:
+Mouse Shadow
 <h1 contenteditable>🔥WOAH!</h1>
 contenteditable 表示可否被用戶編輯
 text-shadow: 50px 50px 0 rgba(0, 0, 0, 0.7);
@@ -182,3 +183,17 @@ const {
     offsetWidth: width,
     offsetHeight: height
 } = hero;
+
+day17:
+sort without articles
+function strip(bandName) {
+    return bandName.replace(/^(a |an |the )/i, '').trim();
+}
+
+day18:
+Adding Up Times with Reduce
+const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
+const [mins, secs] = timeCode.split(':').map(parseFloat);
+將nodes 轉成array,
+將string轉成float
+
