@@ -197,3 +197,67 @@ const [mins, secs] = timeCode.split(':').map(parseFloat);
 將nodes 轉成array,
 將string轉成float
 
+day19:
+webcam
+navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+    .then(localMediaStream => {
+      video.srcObject = localMediaStream;
+      video.play();
+    })
+    .catch(err => {
+      console.error(`OH NO!!!`, err);
+    });
+
+        ctx.drawImage(video, 0, 0, width, height);
+    // take the pixels out
+    let pixels = ctx.getImageData(0, 0, width, height);
+    通過修改pixels 製造filter效果, pixels = rgba format
+
+day20:
+Speech Detection
+使用web speech api
+  window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  const recognition = new SpeechRecognition();
+  recognition.interimResults = true;
+  recognition.lang = 'en-US';
+  recognition.start();
+https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
+
+day21:
+Geolocation 
+navigator.geolocation.watchPosition((data) => {
+      console.log(data);
+      speed.textContent = data.coords.speed;
+      arrow.style.transform = `rotate(${data.coords.heading}deg)`;
+    }, (err) => {
+      console.error(err);
+    });
+使用Geolocation api
+https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
+
+day22:
+Follow Along Link
+造一個新element, 改變大小及位置做出highlight 效果
+        const highlight = document.createElement('span');
+        highlight.classList.add('highlight');
+        document.body.appendChild(highlight);
+取得this的Rect位置及大小
+const linkCoords = this.getBoundingClientRect();
+注意要加上px
+highlight.style.height = `${coords.height}px`;
+
+day23:
+SpeechSynthesis
+const msg = new SpeechSynthesisUtterance();
+
+        function toggle(startOver = true) {
+            speechSynthesis.cancel();
+            if (startOver) {
+                speechSynthesis.speak(msg);
+            }
+        }
+        stopButton.addEventListener('click', () => toggle(false));
+    
+使用SpeechSynthesis api
+https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
