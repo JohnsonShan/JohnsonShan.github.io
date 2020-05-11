@@ -261,3 +261,75 @@ const msg = new SpeechSynthesisUtterance();
     
 使用SpeechSynthesis api
 https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
+
+day24:
+Sticky Nav
+監聽scroll, fix nav 
+window.addEventListener('scroll', fixNav);
+body.fixed-nav nav {
+    position: fixed;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+day25:
+Event Capture, Propagation, Bubbling and Once
+理解js event 處理程序, 及我們可以對其做的控制
+key: 1.先捕獲，再冒泡
+     2.當事件傳到 target 本身，沒有分捕獲跟冒泡
+取消事件傳遞: e.stopPropagation();
+參考: https://blog.techbridge.cc/2017/07/15/javascript-event-propagation/
+
+day26:
+Follow Along Nav
+類似day24,
+1. 用queryselector取得elements
+2. 加入event listener 
+3. 完成function : 用class list add/ remove 做出fade in/out 效果, display block & opcity : 1 
+4. 改變bg block  大小/ 位移 / fade in/out :
+    background.style.setProperty('width', `${coords.width}px`);
+    background.style.setProperty('height', `${coords.height}px`);
+    background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
+5. set time out : delay 後執行 , 做出先後效果
+參考: https://blog.camel2243.com/2016/08/06/javascript-%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3-settimeout-%E8%88%87-setinterval-%E7%9A%84%E4%B8%8D%E5%90%8C%E4%B9%8B%E8%99%95/
+題外: 「做」 和 「造」 的分別 http://www.chinsoc.hkusu.hku.hk/usefulmaterial/0001/09.htm
+
+day27:
+Click and Drag
+startX = e.pageX - slider.offsetLeft; 
+scrollLeft = slider.scrollLeft;
+startX是mouse click該element的坐標 ( 非viewport坐標 )
+scrollLeft 是已經scroll過的X坐標數值 
+
+題外:
+//-ms代表【ie】内核识别码
+//-moz代表火狐【firefox】内核识别码
+//-webkit代表谷歌【chrome】/苹果【safari】内核识别码
+//-o代表欧朋【opera】内核识别码
+为什么要加识别码：
+在标准还未确定时，部分浏览器已经根据最初草案实现了部分功能，为了与之后确定下来的标准进行兼容，所以每种浏览器使用了自己的私有前缀与标准进行区分，当标准确立后，各大浏览器将逐步支持不带前缀的css3新属性。
+目前已有很多私有前缀可以不写了，但为了兼容老版本的浏览器，可以仍沿用私有前缀和标准方法，逐渐过渡。
+參考: https://www.cnblogs.com/EasonJim/p/6140097.html
+
+day28:
+Video Speed Controller UI
+類似day11 html video player
+const y = e.pageY - this.offsetTop;
+可以使用
+const y = e.offsetY;
+
+day29:
+Countdown Timer
+運用Date api & setinterval 
+e.preventDefault();
+取消browser Default 行動
+參考: https://developer.mozilla.org/zh-TW/docs/Web/API/Event/preventDefault
+
+day30:
+Whack-a-mole!
+打地鼠, 主要使用RANDOM function
+Math.random()
+e.isTrusted : 防作弊
+Event 介面的 isTrusted 唯讀屬性為一個布林值，
+若事件物件是由使用者操作而產生，則 isTrusted 值為 true。
+若事件物件是由程式碼所建立、修改，或是透過 EventTarget.dispatchEvent() 來觸發，則 isTrusted 值為 false。
+參考: https://developer.mozilla.org/zh-TW/docs/Web/API/Event/isTrusted
