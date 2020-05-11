@@ -1,4 +1,5 @@
 day1: 
+JavaScript Drum Kit
 使用document.querySelector
 使用classList.add 及 classList.remove 配合transition
 
@@ -8,6 +9,7 @@ this.classList.remove("playing");
 
 
 day2:
+JS and CSS Clock
 使用.style 改變 style 屬性,
 使用setInterval 定時執行function 
 

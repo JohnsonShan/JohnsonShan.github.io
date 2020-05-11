@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Johnson Shan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel='stylesheet' href="style.css">
+</head>
+
+<style>
+
+
+</style>
+
+<body>
+
+    <div class=' container '>
+        <div class='my-nav '>
+            <ul class='shadow-sm p-3 mb-5 bg-white rounded '>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../portfolio.html ">Portfolio</a></li>
+                <li><a href="../Blog.html ">Blog</a></li>
+            </ul>
+        </div>
+        <div class='main-content '>
+            <h1>#1 Javascript30</h1>
+            <div class='add-bottom-line'></div>
+            <h4>感想: </h4>
+            <h4>
+                30天練習令我對html, CSS, javascript 的理解更深，根基亦更扎實。<br><br>
+                大多數javascript 應用都是分作三個步驟: <br><br>
+                
+                1. 抓取html elements, 例如: const button = document.querySelector('.my-button'); <br><br>
+                2. 加入eventListener, 例如: button.addEventListener('click', handleClick); <br><br>
+                3. 完成handle function, 例如: handleClick() { console.log('Hello world');} <br><br>
+
+                此外，browser提供了很多的Web API, 多查MDN學習套用各種API對我亦很有幫助。  <br><br>
+                下面是一些study log 及demo。
+            </h4>
+            <div class='add-bottom-line'></div>
+
+            <p>Day 1: <span><a href="../javascript30/day1/index.html">Demo : JavaScript Drum Kit</a></span></p>
+            <p>
+                使用document.querySelector <br>
+                使用classList.add 及 classList.remove 配合transition <br>
+                document.querySelector(`audio[data-key=${e.keyCode}]`) <br>
+                key.classList.add("playing"); <br>
+                this.classList.remove("playing"); <br>
+            </p>
+
+            <p>Day 2: <span><a href="../javascript30/day2/index.html">Demo : JS and CSS Clock</a></span></p>
+            <p>
+                
+                使用.style 改變 style 屬性, <br> 
+                使用setInterval 定時執行function  <br>
+                document.querySelector(".second-hand").style.transform = `rotate(${seconds_deg}deg)`;<br>
+                setInterval(setDate, 1000);<br>
+            </p>
+
+            <p>Day 3: <span><a href="../javascript30/day3/index.html">Demo : 初次使用CSS Variables</a></span></p>
+            <p>
+                
+
+                :root { <br>
+                   --spacing: 10px; <br>
+                   --blur: 10px; <br>
+                   --base: #ffc600; <br>
+               } <br>
+               
+               img { <br>
+                   padding: var(--spacing); <br>
+                   background: var(--base); <br>
+                   filter: blur( var(--blur)); <br>
+               } <br>
+        
+               const suffix = this.dataset.sizing || ''; <br>
+               document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix); <br>
+            </p>
+
+            <p>Day 4: <span><a href="../javascript30/day4/index.html">Demo : 使用Array function</a></span></p>
+            <p>
+                const totalYears = inventors.reduce((total, inventor) => total + inventor.passed - inventor.year, 0); <br>
+                const sum = data.reduce((obj, item) => { <br>
+                    if (!obj[item]) { <br>
+                        obj[item] = 0; <br>
+                    }<br>
+                    obj[item]++; <br>
+                    return obj;<br>
+                }, {});<br>
+                發現第一種寫法會return 第一句,而第二種寫法需添加return<br>
+                研究了javascript object 寫法及ES5 與ES6 的差別<br>
+            </p>
+
+            <p>Day 5: <span><a href="../javascript30/day5/index.html">Demo : 練習css flex </a></span></p>
+            <p>
+                
+                flex: 1; <br>
+                justify-content: center;<br>
+                align-items: center;<br>
+                display: flex;<br>
+                flex-direction: column;<br>
+
+                items.forEach(item => item.addEventListener('transitionend', toggleOpenActive));<br>
+                有機會有數種transitionend 同時發生，導致toggle 失效<br>
+            </p>
+
+            
+
+
+
+        </div>
+
+        <div class='my-footer '>
+            <p class='shadow-sm p-3 mb-5 bg-white rounded '>© Copyright 2020 Johnson Shan - All Rights Reserved</p>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
