@@ -12,12 +12,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel='stylesheet' href="style.css">
+    <link rel='stylesheet' href="../style.css">
 </head>
 
 <style>
-
-
+    .blog-title {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        /* border: 1px solid black; */
+    }
+    
+    .blog-date {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-bottom: 0px;
+        /* border: 1px solid black; */
+    }
 </style>
 
 <body>
@@ -32,97 +44,386 @@
             </ul>
         </div>
         <div class='main-content '>
-            <h1>#1 Javascript30</h1>
+            <div id='1' class='row'>
+                <h1 class='col-sm blog-title' style="text-align: left;">Javascript30</h1>
+                <p class='col-sm blog-date'>12-05-2020</p>
+            </div>
+
             <div class='add-bottom-line'></div>
             <h4>感想: </h4>
             <h4>
-                30天練習令我對html, CSS, javascript 的理解更深，根基亦更扎實。<br><br>
-                大多數javascript 應用都是分作三個步驟: <br><br>
-                
-                1. 抓取html elements, 例如: const button = document.querySelector('.my-button'); <br><br>
-                2. 加入eventListener, 例如: button.addEventListener('click', handleClick); <br><br>
-                3. 完成handle function, 例如: handleClick() { console.log('Hello world');} <br><br>
-
-                此外，browser提供了很多的Web API, 多查MDN學習套用各種API對我亦很有幫助。  <br><br>
-                下面是一些study log 及demo。
+                30天練習加深了對html, CSS, javascript 的理解，根基亦更扎實。<br><br> 大多數javascript 應用都是分作三個步驟: <br><br> 1. 抓取html elements, 例如: const button = document.querySelector('.my-button'); <br><br> 2. 加入eventListener, 例如: button.addEventListener('click', handleClick);
+                <br><br> 3. 完成handle function, 例如: handleClick() { console.log('Hello world');} <br><br> 此外，browser提供了很多的Web API, 多查MDN學習套用各種API亦很有幫助。 <br><br> 下面是一些study log 及demo。
             </h4>
             <div class='add-bottom-line'></div>
 
             <p>Day 1: <span><a href="../javascript30/day1/index.html">Demo : JavaScript Drum Kit</a></span></p>
-            <p>
-                使用document.querySelector <br>
-                使用classList.add 及 classList.remove 配合transition <br>
-                document.querySelector(`audio[data-key=${e.keyCode}]`) <br>
-                key.classList.add("playing"); <br>
-                this.classList.remove("playing"); <br>
-            </p>
+            <pre>
+使用document.querySelector
+使用classList.add 及 classList.remove 配合transition
+document.querySelector(`audio[data-key=${e.keyCode}]`)
+key.classList.add("playing");
+this.classList.remove("playing");
+</pre>
 
             <p>Day 2: <span><a href="../javascript30/day2/index.html">Demo : JS and CSS Clock</a></span></p>
-            <p>
-                
-                使用.style 改變 style 屬性, <br> 
-                使用setInterval 定時執行function  <br>
-                document.querySelector(".second-hand").style.transform = `rotate(${seconds_deg}deg)`;<br>
-                setInterval(setDate, 1000);<br>
-            </p>
+            <pre>
+使用.style 改變 style 屬性,
+使用setInterval 定時執行function
+document.querySelector(".second-hand").style.transform = `rotate(${seconds_deg}deg)`;
+setInterval(setDate, 1000);
+</pre>
 
             <p>Day 3: <span><a href="../javascript30/day3/index.html">Demo : 初次使用CSS Variables</a></span></p>
-            <p>
-                
+            <pre>
+:root {
+    --spacing: 10px;
+    --blur: 10px;
+    --base: #ffc600;
+}
 
-                :root { <br>
-                   --spacing: 10px; <br>
-                   --blur: 10px; <br>
-                   --base: #ffc600; <br>
-               } <br>
-               
-               img { <br>
-                   padding: var(--spacing); <br>
-                   background: var(--base); <br>
-                   filter: blur( var(--blur)); <br>
-               } <br>
-        
-               const suffix = this.dataset.sizing || ''; <br>
-               document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix); <br>
-            </p>
+img {
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur( var(--blur));
+}
+
+const suffix = this.dataset.sizing || '';
+document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+</pre>
 
             <p>Day 4: <span><a href="../javascript30/day4/index.html">Demo : 使用Array function</a></span></p>
-            <p>
-                const totalYears = inventors.reduce((total, inventor) => total + inventor.passed - inventor.year, 0); <br>
-                const sum = data.reduce((obj, item) => { <br>
-                    if (!obj[item]) { <br>
-                        obj[item] = 0; <br>
-                    }<br>
-                    obj[item]++; <br>
-                    return obj;<br>
-                }, {});<br>
-                發現第一種寫法會return 第一句,而第二種寫法需添加return<br>
-                研究了javascript object 寫法及ES5 與ES6 的差別<br>
-            </p>
+            <pre>
+const totalYears = inventors.reduce((total, inventor) => total + inventor.passed - inventor.year, 0);
+
+const sum = data.reduce((obj, item) => {
+    if (!obj[item]) {
+        obj[item] = 0;
+    }
+    obj[item]++;
+    return obj;
+}, {});
+發現第一種寫法會return 第一句,而第二種寫法需添加return
+研究了javascript object 寫法及ES5 與ES6 的差別
+</pre>
 
             <p>Day 5: <span><a href="../javascript30/day5/index.html">Demo : 練習css flex </a></span></p>
-            <p>
-                
-                flex: 1; <br>
-                justify-content: center;<br>
-                align-items: center;<br>
-                display: flex;<br>
-                flex-direction: column;<br>
+            <pre>
+flex: 1;
+justify-content: center;
+align-items: center;
+display: flex;
+flex-direction: column;
+items.forEach(item => item.addEventListener('transitionend', toggleOpenActive));
+有機會有數種transitionend 同時發生，導致toggle 失效
+</pre>
 
-                items.forEach(item => item.addEventListener('transitionend', toggleOpenActive));<br>
-                有機會有數種transitionend 同時發生，導致toggle 失效<br>
-            </p>
+            <p>Day 6: <span><a href="../javascript30/day6/index.html">Demo : 使用web api  </a></span></p>
+            <pre>
+fetch(endpoint)
+.then(blob => blob.json())
+.then(data => cities.push(...data))
+重溫array method
+Regular Expression
+function numWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+</pre>
 
-            
+            <p>Day 7: <span><a href="../javascript30/day7/index.html">Demo : Array method 2  </a></span></p>
+            <pre>
+console.log(people.some(person => (2020 - person.year) >= 19));
+console.log(people.every(person => (2020 - person.year) >= 19));
+console.log(comments.find(comment => (comment.id === 823423)).text);
+const index = comments.findIndex(comment => (comment.id === 823423));
+comments.splice(index, 1)
+</pre>
 
+
+            <p>Day 8: <span><a href="../javascript30/day8/index.html">Demo : html canvas  </a></span></p>
+            <pre>
+ctx.beginPath();
+//start
+ctx.moveTo(lastX, lastY);
+//to
+ctx.lineTo(e.offsetX, e.offsetY);
+ctx.stroke();
+offset x,y 是scr element 相應x,y
+</pre>
+
+            <p>Day 9: <span><a href="../javascript30/day9/index.html">Demo : console 應用  </a></span></p>
+            <pre>
+console.assert(false, 'this is wrong');
+只有condition = false 才會print 後面的string
+計時
+console.time('fetching data');
+fetch('https://api.github.com/users/wesbos')
+.then(data => data.json())
+.then(data => {
+    console.timeEnd('fetching data');
+    console.log(data);
+});
+</pre>
+
+            <p>Day 10: <span><a href="../javascript30/day10/index.html">Demo : checkbox應用  </a></span></p>
+            <pre>
+注意query selector syntax
+const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+檢查undefined
+condition:  true || false && false = true
+(true || false) && false = false
+if ((checkbox === this || checkbox === lastCheckedbox) && lastCheckedbox !== undefined) {
+    inbetween = !inbetween;
+}
+</pre>
+
+            <p>Day 11: <span><a href="../javascript30/day11/index.html">Demo : html video player  </a></span></p>
+            <pre>
+querySelector 用法
+const ranges = document.querySelectorAll('input[type="range"]');
+const skips = document.querySelectorAll('[data-skip]');
+學習video player API
+viewer.play();
+viewer.pause();
+注意click progress bar 和 mousedown flag 的logic
+let editProgress = false;
+progress.addEventListener('mousedown', (e) => {
+    editProgress = true;
+    updateTime(e);
+});
+</pre>
+
+            <p>Day 12: <span><a href="../javascript30/day12/index.html">Demo : 處理array  </a></span></p>
+            <pre>
+array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+keyArray.splice(-secretCode.length - 1, keyArray.length - secretCode.length);
+</pre>
+
+            <p>Day 13: <span><a href="../javascript30/day13/index.html">Demo : scroll slide in/out  </a></span></p>
+            <pre>
+利用window.scrollY 和 image.offsetY 判斷 slide in/ out
+const slideInAt = (window.scrollY + window.innerHeight);
+if (isHalfShown && isNotScrolledPast) {
+    slideImage.classList.add('active');
+}
+</pre>
+
+            <p>Day 14: <span><a href="../javascript30/day14/index.html">Demo : Shallow copy, deep copy  </a></span></p>
+            <pre>
+類似pointer的概念
+以下方法new object/array 會指向original object/array 的 memory address, 修改新的會同時影響原來的
+const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+const team = players;
+
+解決方法: deep copy
+const team2 = players.slice();
+const team3 = [].concat(players);
+const team4 = [...players];
+const team5 = Array.from(players);
+然而以上方法只能做一層deep copy, 如果object 裡有object/ array 方法會失效
+可以將obj換成json再換回來, 只限json obj, method/function 會失效
+var obj2 = JSON.parse(JSON.stringify(obj1));
+或使用jquery $.extend or lodash library 
+</pre>
+
+            <p>Day 15: <span><a href="../javascript30/day15/index.html">Demo : localstorage  </a></span></p>
+            <pre>
+const items = JSON.parse(localStorage.getItem('items')) || [];
+localStorage.setItem('items', JSON.stringify(items));
+以JSON 格式儲存,以JSON 格式讀取
+</pre>
+
+            <p>Day 16: <span><a href="../javascript30/day16/index.html">Demo : Mouse Shadow  </a></span></p>
+            <pre>
+< h1 contenteditable>🔥WOAH! < /h1>
+contenteditable 表示可否被用戶編輯
+text-shadow: 50px 50px 0 rgba(0, 0, 0, 0.7);
+text-shadow: h-shadow v-shadow blur-radius color|none|initial|inherit;
+不同的varible定義寫法
+// const width = hero.offsetWidth;
+// const height = hero.offsetHeight;
+const {
+    offsetWidth: width,
+    offsetHeight: height
+} = hero;
+</pre>
+
+            <p>Day 17: <span><a href="../javascript30/day17/index.html">Demo : Sort without articles  </a></span></p>
+            <pre>
+function strip(bandName) {
+    return bandName.replace(/^(a |an |the )/i, '').trim();
+}
+</pre>
+
+            <p>Day 18: <span><a href="../javascript30/day18/index.html">Demo : Adding Up Times with Reduce  </a></span></p>
+            <pre>
+const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
+const [mins, secs] = timeCode.split(':').map(parseFloat);
+將nodes 轉成array,
+將string轉成float
+</pre>
+
+            <p>Day 19: <span><a href="../javascript30/day19/index.html">Demo : webcam  </a></span></p>
+            <pre>
+navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+.then(localMediaStream => {
+    video.srcObject = localMediaStream;
+    video.play();
+})
+.catch(err => {
+    console.error(`OH NO!!!`, err);
+});
+
+ctx.drawImage(video, 0, 0, width, height);
+// take the pixels out
+let pixels = ctx.getImageData(0, 0, width, height);
+通過修改pixels 製造filter效果, pixels = rgba format
+</pre>
+
+<p>Day 20: <span><a href="../javascript30/day20/index.html">Demo : Speech Detection  </a></span></p>
+<pre>
+使用web speech api
+window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+const recognition = new SpeechRecognition();
+recognition.interimResults = true;
+recognition.lang = 'en-US';
+recognition.start();
+參考: https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
+</pre>
+
+<p>Day 21: <span><a href="../javascript30/day21/index.html">Demo : Geolocation   </a></span></p>
+<pre>
+navigator.geolocation.watchPosition((data) => {
+    console.log(data);
+    speed.textContent = data.coords.speed;
+    arrow.style.transform = `rotate(${data.coords.heading}deg)`;
+    }, (err) => {
+    console.error(err);
+    });
+使用Geolocation api
+參考: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
+</pre>
+
+<p>Day 22: <span><a href="../javascript30/day22/index.html">Demo : Follow Along Link   </a></span></p>
+<pre>
+造一個新element, 改變大小及位置做出highlight 效果
+const highlight = document.createElement('span');
+highlight.classList.add('highlight');
+document.body.appendChild(highlight);
+取得this的Rect位置及大小
+const linkCoords = this.getBoundingClientRect();
+注意要加上px
+highlight.style.height = `${coords.height}px`;
+</pre>
+
+<p>Day 23: <span><a href="../javascript30/day23/index.html">Demo : SpeechSynthesis   </a></span></p>
+<pre>
+const msg = new SpeechSynthesisUtterance();
+
+function toggle(startOver = true) {
+    speechSynthesis.cancel();
+    if (startOver) {
+        speechSynthesis.speak(msg);
+    }
+}
+stopButton.addEventListener('click', () => toggle(false));
+
+使用SpeechSynthesis api
+參考: https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
+</pre>
+
+<p>Day 24: <span><a href="../javascript30/day24/index.html">Demo : Sticky Nav   </a></span></p>
+<pre>
+監聽scroll, fix nav 
+window.addEventListener('scroll', fixNav);
+body.fixed-nav nav {
+    position: fixed;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+</pre>
+
+<p>Day 25: <span><a href="../javascript30/day25/index.html">Demo : Event Capture, Propagation, Bubbling and Once   </a></span></p>
+<pre>
+理解js event 處理程序, 及我們可以對其做的控制
+key:1.先捕獲，再冒泡
+    2.當事件傳到 target 本身，沒有分捕獲跟冒泡
+取消事件傳遞: e.stopPropagation();
+參考: https://blog.techbridge.cc/2017/07/15/javascript-event-propagation/
+</pre>
+
+<p>Day 26: <span><a href="../javascript30/day26/index.html">Demo : Follow Along Nav   </a></span></p>
+<pre>
+類似day24,
+1. 用queryselector取得elements
+2. 加入event listener 
+3. 完成function : 用class list add/ remove 做出fade in/out 效果, display block & opcity : 1 
+4. 改變bg block  大小/ 位移 / fade in/out :
+    background.style.setProperty('width', `${coords.width}px`);
+    background.style.setProperty('height', `${coords.height}px`);
+    background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
+5. set time out : delay 後執行 , 做出先後效果
+參考: https://blog.camel2243.com/2016/08/06/javascript-%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3-settimeout-%E8%88%87-setinterval-%E7%9A%84%E4%B8%8D%E5%90%8C%E4%B9%8B%E8%99%95/
+</pre>
+
+<p>Day 27: <span><a href="../javascript30/day27/index.html">Demo : Click and Drag   </a></span></p>
+<pre>
+startX = e.pageX - slider.offsetLeft; 
+scrollLeft = slider.scrollLeft;
+startX是mouse click該element的坐標 ( 非viewport坐標 )
+scrollLeft 是已經scroll過的X坐標數值 
+
+//-ms代表【ie】內核識別碼
+//-moz代表火狐【firefox】內核識別碼
+//-webkit代表谷歌【chrome】/蘋果【safari】內核識別碼
+//-o代表歐朋【opera】內核識別碼
+為什麼要加識別碼：
+在標準尚未確定時，部分瀏覽器已經根據最初預定實現了部分功能，為了與隨後確定下來的標准進行兼容，
+因此某些瀏覽器使用了自己的專有性與標准進行區分，當標準糾正後， 各大瀏覽器將逐步支持不帶初始的css3新屬性。
+目前已有很多私有共識可以不寫了，但為了兼容老版本的瀏覽器，可以繼續沿用專有的和標準方法，逐漸過渡。
+參考：https：//www.cnblogs.com/EasonJim/p/6140097.html
+</pre>
+
+<p>Day 28: <span><a href="../javascript30/day28/index.html">Demo : Video Speed Controller UI   </a></span></p>
+<pre>
+類似day11 html video player
+const y = e.pageY - this.offsetTop;
+可以使用
+const y = e.offsetY;
+</pre>
+
+<p>Day 29: <span><a href="../javascript30/day29/index.html">Demo : Countdown Timer   </a></span></p>
+<pre>
+運用Date api & setinterval 
+e.preventDefault();
+取消browser Default 行動
+參考: https://developer.mozilla.org/zh-TW/docs/Web/API/Event/preventDefault
+</pre>
+
+<p>Day 30: <span><a href="../javascript30/day30/index.html">Demo : Whack-a-mole!   </a></span></p>
+<pre>
+打地鼠, 主要使用RANDOM function
+Math.random()
+e.isTrusted : 防作弊
+Event 介面的 isTrusted 唯讀屬性為一個布林值，
+若事件物件是由使用者操作而產生，則 isTrusted 值為 true。
+若事件物件是由程式碼所建立、修改，或是透過 EventTarget.dispatchEvent() 來觸發，則 isTrusted 值為 false。
+參考: https://developer.mozilla.org/zh-TW/docs/Web/API/Event/isTrusted
+</pre>
 
 
         </div>
+        <!-- end of main-content -->
+
+
+
+
 
         <div class='my-footer '>
             <p class='shadow-sm p-3 mb-5 bg-white rounded '>© Copyright 2020 Johnson Shan - All Rights Reserved</p>
         </div>
     </div>
+    <!-- end of container -->
 
 
 

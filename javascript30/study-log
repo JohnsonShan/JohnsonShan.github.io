@@ -47,8 +47,8 @@ const sum = data.reduce((obj, item) => {
     return obj;
 }, {});
 
-google 發現第一種寫法會return 第一句,而第二種寫法需添加return
-goolge 了javascript object 寫法及ES5 與ES6 的差別
+發現第一種寫法會return 第一句,而第二種寫法需添加return
+研究了javascript object 寫法及ES5 與ES6 的差別
 
 day5: 
 練習css flex 
@@ -293,7 +293,7 @@ Follow Along Nav
     background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
 5. set time out : delay 後執行 , 做出先後效果
 參考: https://blog.camel2243.com/2016/08/06/javascript-%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3-settimeout-%E8%88%87-setinterval-%E7%9A%84%E4%B8%8D%E5%90%8C%E4%B9%8B%E8%99%95/
-題外: 「做」 和 「造」 的分別 http://www.chinsoc.hkusu.hku.hk/usefulmaterial/0001/09.htm
+
 
 day27:
 Click and Drag
