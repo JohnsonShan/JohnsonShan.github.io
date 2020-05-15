@@ -30,11 +30,13 @@
         padding-bottom: 0px;
         /* border: 1px solid black; */
     }
+    
     @media only screen and (max-width: 576px) {
         .blog-date {
             justify-content: flex-start;
         }
     }
+    
     @media only screen and (max-width: 768px) {}
 </style>
 
@@ -286,8 +288,8 @@ let pixels = ctx.getImageData(0, 0, width, height);
 通過修改pixels 製造filter效果, pixels = rgba format
 </pre>
 
-<p>Day 20: <span><a href="../javascript30/day20/index.html">Demo : Speech Detection  </a></span></p>
-<pre>
+            <p>Day 20: <span><a href="../javascript30/day20/index.html">Demo : Speech Detection  </a></span></p>
+            <pre>
 使用web speech api
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -298,8 +300,8 @@ recognition.start();
 參考: https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
 </pre>
 
-<p>Day 21: <span><a href="../javascript30/day21/index.html">Demo : Geolocation   </a></span></p>
-<pre>
+            <p>Day 21: <span><a href="../javascript30/day21/index.html">Demo : Geolocation   </a></span></p>
+            <pre>
 navigator.geolocation.watchPosition((data) => {
     console.log(data);
     speed.textContent = data.coords.speed;
@@ -311,8 +313,8 @@ navigator.geolocation.watchPosition((data) => {
 參考: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API
 </pre>
 
-<p>Day 22: <span><a href="../javascript30/day22/index.html">Demo : Follow Along Link   </a></span></p>
-<pre>
+            <p>Day 22: <span><a href="../javascript30/day22/index.html">Demo : Follow Along Link   </a></span></p>
+            <pre>
 造一個新element, 改變大小及位置做出highlight 效果
 const highlight = document.createElement('span');
 highlight.classList.add('highlight');
@@ -323,8 +325,8 @@ const linkCoords = this.getBoundingClientRect();
 highlight.style.height = `${coords.height}px`;
 </pre>
 
-<p>Day 23: <span><a href="../javascript30/day23/index.html">Demo : SpeechSynthesis   </a></span></p>
-<pre>
+            <p>Day 23: <span><a href="../javascript30/day23/index.html">Demo : SpeechSynthesis   </a></span></p>
+            <pre>
 const msg = new SpeechSynthesisUtterance();
 
 function toggle(startOver = true) {
@@ -339,8 +341,8 @@ stopButton.addEventListener('click', () => toggle(false));
 參考: https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
 </pre>
 
-<p>Day 24: <span><a href="../javascript30/day24/index.html">Demo : Sticky Nav   </a></span></p>
-<pre>
+            <p>Day 24: <span><a href="../javascript30/day24/index.html">Demo : Sticky Nav   </a></span></p>
+            <pre>
 監聽scroll, fix nav 
 window.addEventListener('scroll', fixNav);
 body.fixed-nav nav {
@@ -349,8 +351,8 @@ body.fixed-nav nav {
 }
 </pre>
 
-<p>Day 25: <span><a href="../javascript30/day25/index.html">Demo : Event Capture, Propagation, Bubbling and Once   </a></span></p>
-<pre>
+            <p>Day 25: <span><a href="../javascript30/day25/index.html">Demo : Event Capture, Propagation, Bubbling and Once   </a></span></p>
+            <pre>
 理解js event 處理程序, 及我們可以對其做的控制
 key:1.先捕獲，再冒泡
     2.當事件傳到 target 本身，沒有分捕獲跟冒泡
@@ -358,8 +360,8 @@ key:1.先捕獲，再冒泡
 參考: https://blog.techbridge.cc/2017/07/15/javascript-event-propagation/
 </pre>
 
-<p>Day 26: <span><a href="../javascript30/day26/index.html">Demo : Follow Along Nav   </a></span></p>
-<pre>
+            <p>Day 26: <span><a href="../javascript30/day26/index.html">Demo : Follow Along Nav   </a></span></p>
+            <pre>
 類似day24,
 1. 用queryselector取得elements
 2. 加入event listener 
@@ -372,8 +374,8 @@ key:1.先捕獲，再冒泡
 參考: https://blog.camel2243.com/2016/08/06/javascript-%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3-settimeout-%E8%88%87-setinterval-%E7%9A%84%E4%B8%8D%E5%90%8C%E4%B9%8B%E8%99%95/
 </pre>
 
-<p>Day 27: <span><a href="../javascript30/day27/index.html">Demo : Click and Drag   </a></span></p>
-<pre>
+            <p>Day 27: <span><a href="../javascript30/day27/index.html">Demo : Click and Drag   </a></span></p>
+            <pre>
 startX = e.pageX - slider.offsetLeft; 
 scrollLeft = slider.scrollLeft;
 startX是mouse click該element的坐標 ( 非viewport坐標 )
@@ -390,24 +392,24 @@ scrollLeft 是已經scroll過的X坐標數值
 參考：https：//www.cnblogs.com/EasonJim/p/6140097.html
 </pre>
 
-<p>Day 28: <span><a href="../javascript30/day28/index.html">Demo : Video Speed Controller UI   </a></span></p>
-<pre>
+            <p>Day 28: <span><a href="../javascript30/day28/index.html">Demo : Video Speed Controller UI   </a></span></p>
+            <pre>
 類似day11 html video player
 const y = e.pageY - this.offsetTop;
 可以使用
 const y = e.offsetY;
 </pre>
 
-<p>Day 29: <span><a href="../javascript30/day29/index.html">Demo : Countdown Timer   </a></span></p>
-<pre>
+            <p>Day 29: <span><a href="../javascript30/day29/index.html">Demo : Countdown Timer   </a></span></p>
+            <pre>
 運用Date api & setinterval 
 e.preventDefault();
 取消browser Default 行動
 參考: https://developer.mozilla.org/zh-TW/docs/Web/API/Event/preventDefault
 </pre>
 
-<p>Day 30: <span><a href="../javascript30/day30/index.html">Demo : Whack-a-mole!   </a></span></p>
-<pre>
+            <p>Day 30: <span><a href="../javascript30/day30/index.html">Demo : Whack-a-mole!   </a></span></p>
+            <pre>
 打地鼠, 主要使用RANDOM function
 Math.random()
 e.isTrusted : 防作弊
