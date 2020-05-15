@@ -62,7 +62,9 @@ body{
 .add-bottom-line {
     border-top: 5px solid black;
 }
-
+.add-thin-bottom-line{
+    border-top: 1px solid LightGray;
+}
 .image {
     max-width: 100%;
 }
