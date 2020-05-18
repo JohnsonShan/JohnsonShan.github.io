@@ -68,7 +68,31 @@ body{
 .image {
     max-width: 100%;
 }
+.blog-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    /* border: 1px solid black; */
+}
 
+.blog-date {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-bottom: 0px;
+    /* border: 1px solid black; */
+}
+.blog-link{
+    font-size: 24px;
+}
+@media only screen and (max-width: 576px) {
+    .blog-date {
+        justify-content: flex-start;
+    }
+    .blog-link{
+        font-size: 16px;
+    }
+}
 @media only screen and (max-width: 768px) {
     * {
         font-size: 12px;

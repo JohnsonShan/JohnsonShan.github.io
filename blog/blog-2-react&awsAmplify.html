@@ -16,28 +16,7 @@
 </head>
 
 <style>
-    .blog-title {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-        /* border: 1px solid black; */
-    }
-    
-    .blog-date {
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        padding-bottom: 0px;
-        /* border: 1px solid black; */
-    }
-    
-    @media only screen and (max-width: 576px) {
-        .blog-date {
-            justify-content: flex-start;
-        }
-    }
-    
-    @media only screen and (max-width: 768px) {}
+
 </style>
 
 <body>
@@ -47,30 +26,56 @@
             <ul class='shadow-sm p-3 mb-5 bg-white rounded '>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../portfolio.html ">Portfolio</a></li>
-                <li><a href="blog-1-javascript30.html">Blog</a></li>
-                <!-- <li><a href="../Blog.html ">Blog</a></li> -->
+                <li><a href="../blog.html ">Blog</a></li>
             </ul>
         </div>
         <div class='main-content '>
             <div id='1' class='row'>
-                <h1 class='col-sm blog-title' style="text-align: left;">React-TicTacToe & AWS amplify</h1>
-                <p class='col-sm blog-date'>15-05-2020</p>
+                <h1 class='col-9 blog-title' style="text-align: left;">React-TicTacToe & AWS amplify</h1>
+                <p class='col-3 blog-date'>15/05/20</p>
             </div>
 
             <div class='add-bottom-line'></div>
             <h4>重點: </h4>
-            <h4> 1. 使用 JSX語法，方便用javascript建立UI</h4>
-            <h4> 2. </h4>
+            <h4>1. 使用virtual DOM，增加效能。</h4>
+            <h4>2. 使用 JSX語法，方便用javascript建立UI。</h4>
+            <h4>3. 組件化，方便重用和維護。</h4>
+            <h4>4. Immutability（不可變性），可簡化複雜功能，容易偵測改變。</h4>
+            <h4>5. AWS Amplify 是一個開發平台,可用於建立安全、可擴展的行動和 Web 應用程式。</h4>
             <div class='add-bottom-line'></div>
 
-            <p>Day 1: <span><a href="../javascript30/day1/index.html">Demo : JavaScript Drum Kit</a></span></p>
-            <pre>
-使用document.querySelector
-使用classList.add 及 classList.remove 配合transition
-document.querySelector(`audio[data-key=${e.keyCode}]`)
-key.classList.add("playing");
-this.classList.remove("playing");
-</pre>
+            <h4>基本syntax</h4>
+            <p class="shadow-sm">ReactDOM.render(react-element,html-element);</p>
+            <p class="shadow-sm">
+                ReactDOM.render(
+                < h1>Hello, world!< /h1>,
+                document.getElementById('root'));
+            </p>
+            
+            <h4>Virtual DOM</h4>
+            <p>使用javascript 模擬html dom tree，將改變暫存在javascript dom tree上，使用Diffing 演算法比較2個tree，將更新套用到html dom tree上。</p>
+            <h4>JSX語法</h4>
+            <p> JSX是 JavaScript 的語法擴充，可以更直觀描寫UI外觀。</p>
+            <p class="shadow-sm">const element = < h1>Hello World!!< /h1>;</p>
+            <h4>Components</h4>
+            <p>將UI拆細成多個獨立可重用的Components，Components會return react element，分作function components 和 class components，class components有自己的State(local variable)。</p>
+            <h4>Immutability（不可變性）</h4>
+            <p>類似function program概念，唯讀input，相同input相同output，function內不改變variable。</p>
+            <h4>AWS Amplify</h4>
+            <p>可用於部署和託管 ReactJS 應用程式，另外有執行後端程式等功能。</p>
+            <!-- <h4>Components 與 Props </h4>
+                <p>Component 就像是 JavaScript 的 function，它接收任意的參數（稱之為「props」）並且回傳描述畫面的 React element。</p>
+            <pre class="shadow-sm">
+function Welcome(props) {
+    return < h1>Hello, {props.name}< /h1>;
+}</pre>
+            <p>Component 可以在輸出中引用其他 component.</p>
+            <h4>State 和生命週期</h4>
+            <p>State 類似於 prop，但它是私有且由 component 完全控制的。State更新時會重新render react-element。</p> -->
+            <h4>建立react app 並架設到AWS Amplify</h4>
+            <p>1. 建立一個GitHub Repository, 參考: <a href="https://guides.github.com/activities/hello-world/">https://guides.github.com/activities/hello-world/</a></p>
+            <p>2. 建立react app, 參考: <a href="https://zh-hant.reactjs.org/docs/getting-started.html">https://zh-hant.reactjs.org/docs/getting-started.html</a></p>
+            <p>3. 由於react app 無止架設到GitHub Page, 建立AWS Amplify並架設, 參考: <a href="https://zh-hant.reactjs.org/tutorial/tutorial.html">https://zh-hant.reactjs.org/tutorial/tutorial.html</a></p>
 
 
 
