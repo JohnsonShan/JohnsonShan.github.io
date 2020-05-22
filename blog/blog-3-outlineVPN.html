@@ -10,8 +10,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel='stylesheet' href="../style.css">
 </head>
 
@@ -32,7 +34,7 @@
         <div class='main-content '>
             <div id='1' class='row'>
                 <h1 class='col-9 blog-title' style="text-align: left;">Free Outline VPN with Google Cloud</h1>
-                <p class='col-3 blog-date'>Date: dd/mm/yy</p>
+                <p class='col-3 blog-date'>Date: 22/05/20</p>
             </div>
 
             <div class='add-bottom-line'></div>
@@ -50,10 +52,12 @@
             </p>
             <p>Jigsaw 是 Alphabet 旗下的孵化器，目標是運用科技克服當前全球所面臨的一些最為艱鉅的安全難題，例如抵制網路審查制度、降低數位攻擊的威脅、對抗暴力極端主義，以及防止大眾受到網路騷擾。</p>
             <h4>2. 安裝及使用 Outline VPN 及建立 Google Cloud VPN Server</h4>
-            <p>首先到 <a href="https://getoutline.org/zh-TW/home">Outline VPN官方網站</a>下載 Outline Manager 和 Outline Client 並安裝。</p>
+            <p>首先到 <a href="https://getoutline.org/zh-TW/home">Outline VPN官方網站</a>下載 Outline Manager 和 Outline Client
+                並安裝。</p>
             <p>打開 Outline Manager，新增伺服器選擇右上的 Google Cloud Plaform。</p>
             <img class="image" src="../images/blog/2020/blog-3-outline-1.png">
-            <p>在瀏覽器打開Google Cloud 網頁 <a href="https://cloud.google.com/">https://cloud.google.com/</a>，登入好你的Google帳號，點擊 前往主控台 或 免費試用 。</p>
+            <p>在瀏覽器打開Google Cloud 網頁 <a href="https://cloud.google.com/">https://cloud.google.com/</a>，登入好你的Google帳號，點擊
+                前往主控台 或 免費試用 。</p>
             <img class="image" src="../images/blog/2020/blog-3-gcp-1.png">
             <p>Google Cloud 帳戶有$300美元試用額，試用期後不會自動收費。</p>
             <p>填寫好資料後進入到主控台頁面。</p>
@@ -70,7 +74,7 @@
             <p>選取「Protocols and ports」(通訊協定和通訊埠) 下方的 [Allow all] (全部允許)。</p>
             <p>按一下 [Create] (建立)。</p>
             <img class="image" src="../images/blog/2020/blog-3-gcp-8.png">
-            <p>建立新的 VM 執行個體。</p>
+            <p>建立新的 VM 執行個體，在左邊欄 點選 運算 -> Compute Engine -> VM執行個體。</p>
             <img class="image" src="../images/blog/2020/blog-3-gcp-9.png">
             <img class="image" src="../images/blog/2020/blog-3-gcp-10.png">
             <p>在 [Name] (名稱) 欄位中輸入「outline-server」。</br>
@@ -79,11 +83,14 @@
                 開機磁碟選用Ubuntu。
             </p>
             <img class="image" src="../images/blog/2020/blog-3-gcp-11.png">
-            <p>身分及API存取權 選 允許所有Cloud API的完整存取權。<br> 防火牆 剔 允許HTTP流量 和 允許HTTPS 流量。 <br> 依序按一下 [Management, security, disks, networking, sole tenancy] (管理、安全性、磁碟、網路、單獨租用) 和 [Networking] (網路)， 在 [Network tags] (網路標記) 欄位中輸入「outline」。 按一下 [Create] (建立)。
+            <p>身分及API存取權 選 允許所有Cloud API的完整存取權。<br> 防火牆 剔 允許HTTP流量 和 允許HTTPS 流量。 <br> 依序按一下 [Management, security,
+                disks, networking, sole tenancy] (管理、安全性、磁碟、網路、單獨租用) 和 [Networking] (網路)， 在 [Network tags] (網路標記)
+                欄位中輸入「outline」。 按一下 [Create] (建立)。
             </p>
             <img class="image" src="../images/blog/2020/blog-3-gcp-12.png">
             <p>按SHH 登入你的VM，然後輸入</p>
-            <pre class="shadow-sm">sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/Jigsaw-Code/outline-server/master/src/server_manager/install_scripts/install_server.sh)"</pre>
+            <pre
+                class="shadow-sm">sudo bash -c "$(wget -qO- https://raw.githubusercontent.com/Jigsaw-Code/outline-server/master/src/server_manager/install_scripts/install_server.sh)"</pre>
             <img class="image" src="../images/blog/2020/blog-3-gcp-13.png">
             <img class="image" src="../images/blog/2020/blog-3-gcp-14.png">
 
@@ -96,9 +103,25 @@
             <p>Outline Client 有 多平台版本包括 Android, iOS, macOS, Window 等， <br>
                 打開你的Outline Client並將金鑰貼上後，按連接。
             </p>
-            
-
+            <img class="image" src="../images/blog/2020/blog-3-outline-5.png">
             <p>成功使用VPN。</p>
+            <img class="image" src="../images/blog/2020/blog-3-ip.png">
+            <h4> 3. Window Outline VPN 無法使用問題</h4>
+            <p>Window 系純安裝時可能會出現以下問題。</p>
+            <img class="image" src="../images/blog/2020/blog-3-failed.png">
+            <p>解決方法: 安裝舊版本Outline。<br>
+                打開<a
+                    href="https://github.com/Jigsaw-Code/outline-client/releases/tag/windows-v1.2.27">https://github.com/Jigsaw-Code/outline-client/releases/tag/windows-v1.2.27</a>
+                <br>
+                下載1.2.27 版本的Outline-Client.exe。
+            </p>
+            <img class="image" src="../images/blog/2020/blog-3-oldversion.png">
+            <h4> 4. 如何轉換IP</h4>
+            <p>Google VM 執行個體 會在啟動時隨機派發IP，停止VM 執行個體時會歸還IP。<br>
+                其中一個轉換IP的方法是停止VM 執行個體後重新啟動。    
+            </p>
+            <img class="image" src="../images/blog/2020/blog-3-change-ip.png">
+
         </div>
         <!-- end of main-content -->
 
