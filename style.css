@@ -28,6 +28,19 @@ body{
     color: black;
 }
 
+.my-nav-blog {
+    display: flex;
+}
+
+.my-nav-blog li {
+    display: inline-block;
+}
+
+.my-nav-blog li a {
+    border-radius: 10px;
+    color: black;
+}
+
 .my-content {
     padding: 16px;
 }
