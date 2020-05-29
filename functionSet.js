@@ -1,5 +1,5 @@
 document.querySelector('.my-footer').innerHTML = `
-<p id='footer' class='shadow-sm p-3 mb-5 bg-white rounded '>
+<p class='shadow-sm p-3 mb-5 bg-white rounded '>
 © Copyright  ${new Date().getFullYear()}  Johnson Shan - All Rights Reserved
 </p> 
 `;
@@ -23,3 +23,4 @@ if (document.querySelector('.my-nav-blog') != null) {
 </ul>
 `;
 }
+
