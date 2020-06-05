@@ -1,0 +1,81 @@
+#html
+<body>
+<div id="App"> </div>
+  hi2
+</body>
+
+#css
+$bg-black: black
+$bg-font: white
+
+body
+  background-color: $bg-black
+  color: $bg-font
+  text-align: content
+  
+#js
+//references 
+// https://codepen.io/iamscottcox/pen/xROoyR?editors=1010
+// https://redux.js.org/docs/basics/ExampleTodoList.html
+// https://codepen.io/jnmorse/pen/qbLegO
+// https://codepen.io/tag/react-redux/
+
+//import {combineReducers} from 'redux'
+const { combineReducers, createStore} = Redux;
+const { connect, Provider } = ReactRedux;
+
+const BooksReducer = function() {
+  return [
+    {title: 'hi'},
+    {title: 'potato'},
+    {title: 'pskdjskd'},
+    {title: 'slkdjlkjdw'}
+  ]
+}
+
+//reducer
+const rootReducer = combineReducers({
+  books: BooksReducer
+});
+
+
+//container
+class BookList extends React.Component{
+  renderList(){
+    console.log(this.props)
+    return this.props.books.map((book) => {
+      return (
+      <li key={book.title} className="list-group-item">{book.title}</li>)
+    })
+  }
+  render() {
+    return (
+    <ul className="list-group col-sm-4">
+        {this.renderList()}
+      </ul>)
+  } 
+}
+function mapStateToProps(state){ //magic
+  //from here goes into this.props
+  return{
+    books: state.books
+  }
+}
+
+//connect(mapStateToProps)(BookList)
+BookList = connect(mapStateToProps)(BookList);
+
+//app
+const store = createStore(rootReducer)
+class App extends React.Component {
+  render() {
+    return (
+    <div>
+        <Provider store={store}>
+          <BookList />
+        </Provider>
+      </div>)
+  }
+}
+
+ReactDOM.render(<App />,document.getElementById('App'))
