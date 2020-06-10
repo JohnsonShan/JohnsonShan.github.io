@@ -11,8 +11,19 @@ body::-webkit-scrollbar {
 body{
     -ms-overflow-style: none;
 }
+body div {
+    width:100%;
+}
 .test {
     border: 1px solid black;
+}
+.flex-container {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .my-nav {
