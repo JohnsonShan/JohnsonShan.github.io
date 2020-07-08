@@ -109,11 +109,17 @@ body div {
 .blog-link{
     font-size: 24px;
 }
+.link{
+    font-size: 24px;
+}
 @media only screen and (max-width: 576px) {
     .blog-date {
         justify-content: flex-start;
     }
     .blog-link{
+        font-size: 16px;
+    }
+    .link{
         font-size: 16px;
     }
 }
