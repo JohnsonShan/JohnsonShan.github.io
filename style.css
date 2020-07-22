@@ -1,144 +1,173 @@
-* {
-    font-family: 'Noto Serif TC', serif;
-    font-weight: 400;
-    font-size: 16px;
-    padding: 10px;
+.test {
+    border: 2px solid black;
 }
 
-body::-webkit-scrollbar {
-    display: none;
+.test-height-width-100px {
+    height: 100px;
+    width: 100px;
 }
-body{
-    -ms-overflow-style: none;
+
+* {
+    font-family: 'Noto Serif TC', serif;
+    /* font-weight: 900; */
+
+    transition: all .5s;
 }
-body div {
-    width:100%;
+html {
+    overflow-x:hidden;
 }
-.test {
-    border: 1px solid black;
-}
-.flex-container {
-    min-height: 90vh;
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    overflow-x:hidden;
 }
 
-.my-nav {
-    display: flex;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0.8rem;
 }
 
-.my-nav li {
-    display: inline-block;
+p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* margin-top: 10px; */
 }
 
-.my-nav li a {
-    border-radius: 10px;
-    color: black;
+i {
+    font-size: 2rem;
+    padding: 1rem;
+    /* background-color: #1c2845;
+    color: #f5f6f7; */
 }
 
-.my-nav-blog {
-    display: flex;
+.night {
+    background-color: #1c2845;
+    color: #f5f6f7;
 }
 
-.my-nav-blog li {
-    display: inline-block;
+.day {
+    background-color: #f5f6f7;
+    color: #1c2845;
 }
 
-.my-nav-blog li a {
-    border-radius: 10px;
-    color: black;
+.bg-day {
+    background-color: #f5f6f7;
 }
 
-.my-content {
-    padding: 16px;
+.bg-night {
+    background-color: #1c2845;
 }
 
-.my-content h4 {
-    opacity: 0.9;
+.text-night {
+    color: #1c2845;
 }
 
-.my-link {
-    display: flex;
+.text-day {
+    color: #f5f6f7;
 }
 
-.my-link li {
-    display: inline-block;
+.min-height-80 {
+    min-height: 80vh;
 }
 
-.my-link li a i {
-    border-radius: 10px;
-    font-size: 36px;
-    color: black;
+.min-height-10 {
+    min-height: 10vh;
 }
 
-.my-link li a i:hover {
-    background-color: black;
-    color: whitesmoke;
+.min-height-20 {
+    min-height: 20vh;
 }
 
-.my-footer {
-    display: flex;
+.max-height-20 {
+    max-height: 20vh;
 }
 
-.add-bottom-line {
-    border-top: 5px solid black;
+.rwd-width {
+    width: 80vw;
 }
-.add-thin-bottom-line{
-    border-top: 1px solid LightGray;
-}
-.image {
+
+.max-width-100 {
     max-width: 100%;
 }
-.blog-title {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    /* border: 1px solid black; */
+
+.add-line {
+    border-top: 5px solid black;
+    margin-bottom: 10vh;
 }
 
-.blog-date {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    padding-bottom: 0px;
-    /* border: 1px solid black; */
+.add-thin-line {
+    width: 100%;
+    border-top: 2px solid rgb(179, 174, 174);
+    margin-bottom: 5vh;
 }
-.blog-link{
-    font-size: 24px;
+
+.fade-in {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0;
 }
-.link{
-    font-size: 24px;
+
+.from-top {
+    transform: translateY(-200%);
 }
-@media only screen and (max-width: 576px) {
-    .blog-date {
-        justify-content: flex-start;
-    }
-    .blog-link{
-        font-size: 16px;
-    }
-    .link{
-        font-size: 16px;
-    }
+
+.from-bottom {
+    transform: translateY(200%);
 }
-@media only screen and (max-width: 768px) {
+
+.from-left {
+    transform: translateX(-10%);
+}
+
+.from-right {
+    transform: translateX(10%);
+}
+
+#nav {
+    position: absolute;
+    top: 0px;
+}
+
+
+
+.opacity-7 {
+    opacity: 0.7;
+}
+
+@media only screen and (min-width: 992px) {
     * {
-        font-size: 12px;
-        padding: 5px;
+        transition: all .5s;
     }
-    .my-nav {
-        display: block;
+    .bg-day:hover {
+        background-color: #1c2845;
     }
-    .my-content {
-        padding: 8px;
+    .bg-night:hover {
+        background-color: #f5f6f7;
     }
-    .my-link li a i {
-        border-radius: 5px;
-        font-size: 24px;
+    .text-night:hover {
+        color: #f5f6f7;
     }
-    .my-footer {
-        display: block;
+    .text-day:hover {
+        color: #1c2845;
+    }
+    .rwd-width {
+        width: 85vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {   
+    *{
+        font-size: small;
+    }
+    .rwd-width {
+        width: 90vw;
     }
 }
