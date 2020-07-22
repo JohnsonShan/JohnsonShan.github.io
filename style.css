@@ -135,6 +135,7 @@ i {
     position: absolute;
     top: 0px;
 }
+<<<<<<< HEAD
 
 
 
@@ -145,15 +146,28 @@ i {
 @media only screen and (min-width: 992px) {
     * {
         transition: all .5s;
+=======
+@media only screen and (max-width: 576px) {
+    .blog-date {
+        justify-content: flex-start;
+>>>>>>> parent of 4b83eaa... 1
     }
     .bg-day:hover {
         background-color: #1c2845;
     }
+<<<<<<< HEAD
     .bg-night:hover {
         background-color: #f5f6f7;
     }
     .text-night:hover {
         color: #f5f6f7;
+=======
+}
+@media only screen and (max-width: 768px) {
+    * {
+        font-size: 12px;
+        padding: 5px;
+>>>>>>> parent of 4b83eaa... 1
     }
     .text-day:hover {
         color: #1c2845;
