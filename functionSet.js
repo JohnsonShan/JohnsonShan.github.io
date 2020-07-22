@@ -7,9 +7,11 @@ const dropIcon = document.querySelector('#dropIcon');
 const robotIcon = document.querySelector('#robotIcon');
 const closeIcon = document.querySelector('#closeIcon');
 const dropMenu = document.querySelector('#drop-down-list');
+const dropItem = document.querySelectorAll('#drop-down-item > p');
 const works = document.querySelector('#works')
 
 let dropMenuIsOpen = false;
+
 
 const toggleDropDownMenu = () => {
     if (dropMenuIsOpen) {
@@ -58,6 +60,7 @@ const toggleDropDownMenu = () => {
 
 dropIcon.addEventListener('click', toggleDropDownMenu);
 closeIcon.addEventListener('click', toggleDropDownMenu);
+dropItem.forEach(el=>el.addEventListener('click',toggleDropDownMenu));
 
 window.addEventListener('load', () => {
     navText.classList.remove('fade-in');
