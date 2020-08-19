@@ -30,9 +30,11 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6{
     padding: 0.8rem;
 }
+
+
 
 p {
     margin-top: 2px;
@@ -78,7 +80,9 @@ i {
 .min-height-80 {
     min-height: 80vh;
 }
-
+.min-height-40{
+    min-height: 40vh;
+}
 .min-height-10 {
     min-height: 10vh;
 }
