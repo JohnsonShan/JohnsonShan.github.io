@@ -95,9 +95,6 @@ const handleFadeIn = () => {
         })
     }
 
-    // if(left.length ==0 && right.length ==0){
-    //     console.log('done');
-    // }
 
 }
 
