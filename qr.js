@@ -6,21 +6,29 @@ qrType = document.getElementById('typeInput');
 
 let baseName = '';
 let dataArray = [];
+let color = '#000';
+let type = 'square';
+let image = '';
+let width = 300;
+let height = 300;
 
-const qrCode = new QRCodeStyling({
-  width: 300,
-  height: 300,
-  data: "https://github.com/F2BEAR",
-  image: "",
+let qrCode = new QRCodeStyling({
+  width: width,
+  height: height,
+  data: "https://github.com/",
+  image: image,
   dotsOptions: {
-    color: "#000",
-    type: "square"
+    color: color,
+    type: type
   },
 });
 
 const updateQrBaseName = () => {
   baseName = qrBaseName.value;
   console.log(baseName)
+  qrCode.update({
+    data: baseName + qrData.value.split('\n')[0]
+  });
 };
 
 const updateQrData = () => {
@@ -28,44 +36,55 @@ const updateQrData = () => {
     dataArray = qrData.value.split('\n')
   }
   console.log(dataArray)
+  qrCode.update({
+    data: baseName + qrData.value.split('\n')[0]
+  });
 };
 
 const updateQrImg = () => {
-  newQrImage = URL.createObjectURL(qrImage.files[0]);
-  console.log(newQrImage);
+  image = URL.createObjectURL(qrImage.files[0]);
+  console.log(image);
   qrCode.update({
-    image: newQrImage
+    image: image
   });
 };
 
 const updateQrColor = () => {
-  newQrColor = qrColor.value;
+  color = qrColor.value;
   qrCode.update({
     dotsOptions: {
-      color: newQrColor
+      color: color
     }
   });
 };
 
 const updateQrType = () => {
-  newQrType = qrType.value;
+  type = qrType.value;
   qrCode.update({
     dotsOptions: {
-      type: newQrType
+      type: type
     }
   });
 };
 
-const download = () => {
+function download() {
   dataArray.forEach(el => {
     // console.log(baseName + el);
 
     // prevent empty string
     if (el) {
-      qrCode.update({
-        data: baseName + el
+      qrCode2 = new QRCodeStyling({
+        width: width,
+        height: height,
+        data: baseName + el,
+        image: image,
+        dotsOptions: {
+          color: color,
+          type: type
+        },
       });
-      qrCode.download({ name: el, extension: 'jpeg' });
+
+      qrCode2.download({ name: el, extension: 'jpeg' });
     }
 
   })
