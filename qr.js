@@ -4,9 +4,8 @@ qrImage = document.getElementById('imageInput');
 qrColor = document.getElementById('colorInput');
 qrType = document.getElementById('typeInput');
 
-console.log(qrBaseName.value + qrData.value)
-let baseName = 'https://example.com?store=';
-let dataArray = ['1234'];
+let baseName = '';
+let dataArray = [];
 
 const qrCode = new QRCodeStyling({
   width: 300,
@@ -26,7 +25,7 @@ const updateQrBaseName = () => {
 
 const updateQrData = () => {
   if (qrData.value) {
-    dataArray = qrData.value.split('\n');
+    dataArray = qrData.value.split('\n')
   }
   console.log(dataArray)
 };
@@ -68,13 +67,10 @@ const download = () => {
       });
       qrCode.download({ name: el, extension: 'jpeg' });
     }
-    
+
   })
-
-
-
-  // qrCode.download({ name: 'test', extension: 'jpeg' });
 }
 
-
+updateQrBaseName();
+updateQrData();
 qrCode.append(document.getElementById('canvas'));
