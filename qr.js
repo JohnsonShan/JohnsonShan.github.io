@@ -68,9 +68,9 @@ const updateQrType = () => {
 };
 
 function download() {
+  let zip = new JSZip();
   dataArray.forEach(el => {
-    // console.log(baseName + el);
-
+    console.log(baseName + el);
     // prevent empty string
     if (el) {
       qrCode2 = new QRCodeStyling({
@@ -83,13 +83,20 @@ function download() {
           type: type
         },
       });
-
-      qrCode2.download({ name: el, extension: 'jpeg' });
+      let dataURL = qrCode2._canvas.getCanvas().toDataURL();
+      if (dataURL) {
+        zip.file(el + ".png", dataURL.split('base64,')[1], { base64: true });
+      }
     }
-
   })
+  zip.generateAsync({ type: "blob" })
+    .then(function (content) {
+      const link = window.URL.createObjectURL(content);
+      window.location = link;
+    });
 }
 
 updateQrBaseName();
 updateQrData();
 qrCode.append(document.getElementById('canvas'));
+
