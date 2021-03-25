@@ -8,7 +8,7 @@
 
   <title>QR Generator</title>
 
-  <script type="text/javascript" src="https://unpkg.com/qr-code-styling/lib/qr-code-styling.js"></script> 
+  <script type="text/javascript" src="https://unpkg.com/qr-code-styling/lib/qr-code-styling.js"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
@@ -20,8 +20,10 @@
 
   <!--This is the result file of an Article I wrote on Medium.com -->
   <!--You can read it at: https://medium.com/@facucarbonel_97514/how-to-create-a-qr-generator-using-javascript-4b5ce1b6ec27 -->
-  
-  <header id="header"><h1>F2BEAR's QR Generator (Multi version by Johnson)</h1></header>
+
+  <header id="header">
+    <h1>F2BEAR's QR Generator (Multi version by Johnson)</h1>
+  </header>
 
   <section id="content">
 
@@ -33,7 +35,8 @@
 
           <label for="dataInput">Base Name</label>
 
-          <input  onchange="updateQrBaseName();" name="baseNameInput" id="baseNameInput" placeholder="https://example.com?store=" value="https://example.com?store=" required ></textarea>
+          <input onchange="updateQrBaseName();" name="baseNameInput" id="baseNameInput"
+            placeholder="https://example.com?store=" value="https://example.com?store=" required></textarea>
 
         </div>
 
@@ -41,7 +44,11 @@
 
           <label for="dataInput">Data</label>
 
-          <textarea  onchange="updateQrData();" name="dataInput" id="dataInput" placeholder="1234" required >1234</textarea>
+          <textarea onchange="updateQrData();" name="dataInput" id="dataInput" placeholder="1234" required>
+1234
+5678
+9012
+          </textarea>
 
         </div>
 
@@ -49,9 +56,9 @@
 
           <label for="imageInput">Image</label>
 
-          <input type="file" onchange="updateQrImg();" name="imageInput" id="imageInput" accept="image/*"  />
+          <input type="file" onchange="updateQrImg();" name="imageInput" id="imageInput" accept="image/*" />
 
-        </div>  
+        </div>
 
         <div class="inputContainer">
 
@@ -59,7 +66,7 @@
 
           <input type="color" onchange="updateQrColor();" name="colorInput" id="colorInput" />
 
-        </div>  
+        </div>
 
         <div class="inputContainer">
 
@@ -75,7 +82,7 @@
 
           </select>
 
-        </div>  
+        </div>
 
       </form>
 
@@ -87,7 +94,7 @@
 
   </section>
 
-  
+
   <script type="text/javascript" src="qr.js"></script>
 
 </body>
