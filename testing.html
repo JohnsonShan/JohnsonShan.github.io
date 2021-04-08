@@ -15,9 +15,9 @@
 
 <body>
     <div class='mt-3 d-flex flex-column justify-content-center align-items-center'>
-        <div class="row w-100" stlye='max-width: 1600px'>
-            <div class='col-md-9 iframe-container d-flex flex-column justify-content-center align-items-center mb-3'>
-                <div>
+        <div class="row w-100">
+            <div class='col-md-9 d-flex flex-column justify-content-center align-items-center mb-3'>
+                <div class='iframe-container'>
                     <iframe class='responsive-iframe' src="https://www.youtube.com/embed/0qi33gLphV4"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -26,7 +26,6 @@
                 </div>
 
             </div>
-
 
             <div class='comments-container col-md-3 d-flex flex-column-reverse mb-3'>
                 <input></input>
@@ -60,7 +59,7 @@
 </script>
 
 <style>
-    .iframe-container div {
+    .iframe-container {
         position: relative;
         width: 100%;
         overflow: hidden;
