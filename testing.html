@@ -37,23 +37,26 @@
             </div>
 
         </div>
+        <div class='consoleText'></div>
     </div>
 </body>
 
 
 <script>
     const resizeIframeAndComments = (e) => {
+        let consoleText = document.querySelector('.consoleText');
+        consoleText.innerHTML += 'orientation = ' + window.screen.orientation.angle + '<br />'
         let iframeContainer = document.querySelector('.iframe-container');
         let iframe = document.querySelector('iframe');
         let commentsContainer = document.querySelector('.comments-container');
 
         if (window.innerWidth >= 960 || window.screen.orientation.angle == 90) {
-            console.log('add')
+            // console.log('add')
             iframeContainer.classList.add('col-9');
             commentsContainer.classList.add('col-3')
             // desktop
         } else {
-            console.log('remove')
+            // console.log('remove')
             iframeContainer.classList.remove('col-9');
             commentsContainer.classList.remove('col-3')
         }
