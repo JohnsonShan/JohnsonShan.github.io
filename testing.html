@@ -17,11 +17,14 @@
     <div class='mt-3 d-flex flex-column justify-content-center align-items-center'>
         <div class="row w-100" stlye='max-width: 1600px'>
             <div class='col-9 iframe-container d-flex flex-column justify-content-center align-items-center mb-3'>
-                <iframe height="360" src="https://www.youtube.com/embed/0qi33gLphV4"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+                <div>
+                    <iframe class='responsive-iframe' src="https://www.youtube.com/embed/0qi33gLphV4"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
             </div>
 
 
@@ -47,7 +50,6 @@
         let consoleText = document.querySelector('.consoleText');
         consoleText.innerHTML += 'orientation = ' + window.screen.orientation.angle + '<br />'
         let iframeContainer = document.querySelector('.iframe-container');
-        let iframe = document.querySelector('iframe');
         let commentsContainer = document.querySelector('.comments-container');
 
         if (window.innerWidth >= 960 || window.screen.orientation.angle == 90) {
@@ -60,19 +62,6 @@
             iframeContainer.classList.remove('col-9');
             commentsContainer.classList.remove('col-3')
         }
-
-        let safeWidth = iframeContainer.offsetWidth * 0.95;
-        let safeHeight = window.innerHeight * 0.9;
-        let supposeHeight = safeWidth / 16 * 9;
-        // console.log(supposeHeight, width, window.innerWidth)
-        if (supposeHeight <= safeHeight) {
-            iframe.width = safeWidth;
-            iframe.height = supposeHeight;
-            return;
-        } else {
-            iframe.height = safeHeight;
-            iframe.width = safeHeight / 9 * 16;
-        }
     }
     const handleOrientationChange = (e) => {
         console.log("the orientation of the device is now " + window.screen.orientation.angle);
@@ -83,5 +72,26 @@
     window.addEventListener('resize', resizeIframeAndComments)
 
 </script>
+
+<style>
+    .iframe-container div {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding-top: 56.25%;
+        /* 16:9 Aspect Ratio */
+    }
+
+    .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+</style>
 
 </html>
