@@ -46,6 +46,11 @@
 
 
 <script>
+    let consoleText = document.querySelector('.consoleText');
+    consoleText.innerHTML += 'orientation = ';
+    consoleText.innerHTML += window.screen.orientation.angle;
+    consoleText.innerHTML += '<br />';
+
     const resizeIframeAndComments = (e) => {
         let consoleText = document.querySelector('.consoleText');
         consoleText.innerHTML += 'orientation = ' + window.screen.orientation.angle + '<br />'
