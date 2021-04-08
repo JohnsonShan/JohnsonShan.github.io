@@ -40,24 +40,19 @@
             </div>
 
         </div>
-        <div class='consoleText'></div>
     </div>
 </body>
 
 
 <script>
     let consoleText = document.querySelector('.consoleText');
-    consoleText.innerHTML += 'orientation = ';
-    consoleText.innerHTML += window.screen.orientation.angle;
-    consoleText.innerHTML += '<br />';
 
     const resizeIframeAndComments = (e) => {
         let consoleText = document.querySelector('.consoleText');
-        consoleText.innerHTML += 'orientation = ' + window.screen.orientation.angle + '<br />'
         let iframeContainer = document.querySelector('.iframe-container');
         let commentsContainer = document.querySelector('.comments-container');
 
-        if (window.innerWidth >= 960 || window.screen.orientation.angle == 90) {
+        if (window.innerWidth >= 800) {
             // console.log('add')
             iframeContainer.classList.add('col-9');
             commentsContainer.classList.add('col-3')
@@ -68,12 +63,8 @@
             commentsContainer.classList.remove('col-3')
         }
     }
-    const handleOrientationChange = (e) => {
-        console.log("the orientation of the device is now " + window.screen.orientation.angle);
-    }
 
     window.addEventListener('load', resizeIframeAndComments)
-    window.addEventListener("orientationchange", handleOrientationChange);
     window.addEventListener('resize', resizeIframeAndComments)
 
 </script>
