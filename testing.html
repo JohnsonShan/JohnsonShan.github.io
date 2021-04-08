@@ -16,7 +16,7 @@
 <body>
     <div class='mt-3 d-flex flex-column justify-content-center align-items-center'>
         <div class="row w-100" stlye='max-width: 1600px'>
-            <div class='col-9 iframe-container d-flex flex-column justify-content-center align-items-center mb-3'>
+            <div class='col-md-9 iframe-container d-flex flex-column justify-content-center align-items-center mb-3'>
                 <div>
                     <iframe class='responsive-iframe' src="https://www.youtube.com/embed/0qi33gLphV4"
                         title="YouTube video player" frameborder="0"
@@ -28,7 +28,7 @@
             </div>
 
 
-            <div class='comments-container col-3 d-flex flex-column-reverse mb-3'>
+            <div class='comments-container col-md-3 d-flex flex-column-reverse mb-3'>
                 <input></input>
                 <div>Some Text 1</div>
                 <div>Some Text 2</div>
@@ -52,16 +52,6 @@
         let iframeContainer = document.querySelector('.iframe-container');
         let commentsContainer = document.querySelector('.comments-container');
 
-        if (window.innerWidth >= 800) {
-            // console.log('add')
-            iframeContainer.classList.add('col-9');
-            commentsContainer.classList.add('col-3')
-            // desktop
-        } else {
-            // console.log('remove')
-            iframeContainer.classList.remove('col-9');
-            commentsContainer.classList.remove('col-3')
-        }
     }
 
     window.addEventListener('load', resizeIframeAndComments)
