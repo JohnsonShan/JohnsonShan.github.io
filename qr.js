@@ -83,7 +83,8 @@ function download() {
           type: type
         },
       });
-      let dataURL = qrCode2._canvas.toDataURL();
+      let dataURL = qrCode2._canvas._canvas.toDataURL();
+      console.log(dataURL)
       if (dataURL) {
         zip.file(el + ".png", dataURL.split('base64,')[1], { base64: true });
       }
