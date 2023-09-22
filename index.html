@@ -1,101 +1,148 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
+    <title>Johnson Shan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta charset="UTF-8">
-
-  <title>QR Generator</title>
-
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.3.4/lib/qr-code-styling.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jszip@3.6.0/dist/jszip.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel='stylesheet' href="style.css">
 
 </head>
 
 <body>
 
-  <!--This is the result file of an Article I wrote on Medium.com -->
-  <!--You can read it at: https://medium.com/@facucarbonel_97514/how-to-create-a-qr-generator-using-javascript-4b5ce1b6ec27 -->
+    <div id='nav' class='container-fluid d-flex flex-column justify-content-start align-items-center night max-height-20 '>
+        <div id='navText' class='rwd-width d-flex flex-row mt-2 fade-in from-top'>
+            <div id='icon' class='col '>
+                <span class='d-none d-lg-block'><a href='index.html'><i class="fas fa-robot rounded bg-night text-day"> Johnson</i></a></span>
+                <span class='d-md-block d-lg-none'><a href='index.html'><i id='robotIcon' class="fas fa-robot rounded bg-night text-day"></i></a></span>
+            </div>
 
-  <header id="header">
-    <h1>QR Generator</h1>
-  </header>
 
-  <section id="content">
+            <div id='nav-link' class='col d-flex flex-row justify-content-end align-items-center '>
+                <span class='d-none d-lg-block'><a href="index.html"><i class="fas rounded bg-night text-day"> Home</i></a></span>
+                <span class='d-none d-lg-block'><a href="todoapp.html"><i class="fas rounded bg-night text-day"> To Do App</i></a></span>
+                <span class='d-none d-lg-block'><a href="myshop.html"><i class="fas rounded bg-night text-day"> My Shop</i></a></span>
 
-    <div>
-
-      <form id="qrForm" onsubmit="return false;">
-
-        <div class="inputContainer">
-
-          <label for="dataInput">Base Name</label>
-
-          <input onchange="updateQrBaseName();" name="baseNameInput" id="baseNameInput"
-            placeholder="https://example.com?store=" value="https://example.com?store=" required></textarea>
+                <span id='dropIcon' class='d-md-block d-lg-none'><a href="#"><i class="fas fa-bars icon rounded text-day"></i></a></span>
+                <span id='closeIcon' class='d-none'><a href="#"><i class="fas fa-times icon rounded text-night"></i></a></span>
+            </div>
 
         </div>
+        <div id='drop-down-list' class='rwd-width d-flex flex-column justify-content-start align-items-center fade-in from-top '>
+            <div id='drop-down-item' class='w-100 d-flex flex-column justify-content-start align-items-start'>
+                <p><a href="index.html"><i class="fas text-night"> Home</i></a></p>
+                <p><a href="todoapp.html"><i class="fas text-night"> To Do App</i></a></p>
+                <p><a href="myshop.html"><i class="fas text-night"> My Shop</i></a></p>
 
-        <div class="inputContainer">
+            </div>
+        </div>
+    </div>
 
-          <label for="dataInput">Data</label>
 
-          <textarea onchange="updateQrData();" name="dataInput" id="dataInput" placeholder="1234" required>
-1234
-5678
-9012</textarea>
 
+    <div id='about' class='container-fluid d-flex flex-column justify-content-center align-items-center mb-5 night min-height-80 '>
+        <div id='aboutText' class='rwd-width d-flex flex-column justify-content-center align-items-center fade-in from-bottom'>
+            <h1>Hi, I am Johnson.</h1>
+            <h4>a web-developer.</h4>
         </div>
 
-        <div class="inputContainer">
+        <!-- <img> -->
+    </div>
 
-          <label for="imageInput">Image</label>
-
-          <input type="file" onchange="updateQrImg();" name="imageInput" id="imageInput" accept="image/*" />
-
+    <div id='works' class='rwd-width d-flex flex-column justify-content-center align-items-center mb-5 min-height-80 '>
+        <div class='d-flex flex-column justify-content-center align-items-center my-4 '>
+            <h1>Works</h1>
         </div>
 
-        <div class="inputContainer">
+        <div class='add-thin-line my-3'></div>
 
-          <label for="colorInput">Color</label>
+        <!-- todoapp -->
+        <div class='row my-5 '>
 
-          <input type="color" onchange="updateQrColor();" name="colorInput" id="colorInput" />
+            <div class='col-lg-4 p-2 fade-in from-left'>
+                <h1>To Do App</h1>
+                <h4 class='opacity-7'>A Simple To Do App</h4>
+                <h4 class='opacity-7'>Front-end : Reactjs.</h4>
+                <h4 class='opacity-7'>Back-end : Java Spring Boot.</h4>
+                <h4 class='opacity-7'>DataBase : MongoDB Atlas.</h4>
+                <h4 class='opacity-7'>Other : GitHub, Google Cloud Platform.</h4>
+                <p><a href='todoapp.html'><button type="button" class="btn btn-outline-primary">View More</button></a></p>
 
+                <!-- <p><a href='http://34.123.185.68/' target="_blank"><button type="button" class="btn btn-outline-primary">Live Demo</button></a></p> -->
+                <br/>
+            </div>
+
+            <div class='col-lg-8 fade-in from-right d-none d-lg-block'>
+                <div class='d-flex flex-row justify-content-center align-items-center'>
+                    <img class="img-fluid rounded card " src="images/todowebui.png">
+                </div>
+            </div>
+
+            <div class='col-lg-8 fade-in from-right d-block d-lg-none'>
+                <div class='d-flex flex-row justify-content-center align-items-center'>
+                    <img class='img-fluid rounded card ' src="images/todomobileui.png">
+                </div>
+            </div>
         </div>
 
-        <div class="inputContainer">
+        <!-- my shop -->
+        <div class='row my-5 '>
 
-          <label for="typeInput">Type</label>
+            <div class='col-lg-4 p-2 fade-in from-left'>
+                <h1>My Simple Shop</h1>
+                <h4 class='opacity-7'>A Simple Shop</h4>
+                <h4 class='opacity-7'>Front-end : Reactjs.</h4>
+                <h4 class='opacity-7'>Back-end : Java Spring Boot.</h4>
+                <h4 class='opacity-7'>DataBase : MongoDB Atlas.</h4>
+                <p><a href='myshop.html'><button type="button" class="btn btn-outline-primary">View More</button></a></p>
+                <br/>
+            </div>
 
-          <select name="typeInput" id="typeInput" onchange="updateQrType();">
+            <div class='col-lg-8 fade-in from-right d-none d-lg-block'>
+                <div class='d-flex flex-row justify-content-center align-items-center'>
+                    <img class="img-fluid rounded card " src="images/myShop2.png">
+                </div>
+            </div>
 
-            <option value="square">Square</option>
-
-            <option value="rounded">Rounded</option>
-
-            <option value="dots">Dots</option>
-
-          </select>
-
+            <div class='col-lg-8 fade-in from-right d-block d-lg-none'>
+                <div class='d-flex flex-row justify-content-center align-items-center'>
+                    <img class='img-fluid rounded card ' src="images/myShop.png">
+                </div>
+            </div>
         </div>
 
-      </form>
-
-      <button id="formButton" onclick="download();">Download</button>
 
     </div>
 
-    <div id="canvas"></div>
+    <div id='contact' class='container-fluid d-flex flex-column justify-content-center align-items-center night min-height-20 '>
+        <!-- <h1 class='fas'>Contact Me</h1> -->
+        <div class='d-flex flex-row justify-content-center align-items-center '>
 
-  </section>
+            <p><a href='https://github.com/JohnsonShan' target="_blank"><i class="fab fa-github rounded bg-night text-day"></i></a></p>
+            <p><a href="https://codepen.io/johnsonshan" target="_blank"><i class="fab fa-codepen rounded bg-night text-day"></i></a></p>
+            <p><a href="https://www.linkedin.com/in/johnson-shan-b9a373168/" target="_blank"><i class="fab fa-linkedin-in rounded bg-night text-day"></i></a></p>
+            <p><a href="mailto:johnsonshan951101@gmail.com"><i class="fas fa-envelope rounded bg-night text-day"></i></a></p>
+
+        </div>
+    </div>
+    <div id='footer' class='container-fluid d-flex flex-column justify-content-center align-items-center night p-4'>
+        <p>© Copyright 2020 Johnson Shan - All Rights Reserved.</p>
+    </div>
 
 
-  <script type="text/javascript" src="qr.js"></script>
+
+
 
 </body>
+
+<script src='functionSet.js'></script>
 
 </html>
